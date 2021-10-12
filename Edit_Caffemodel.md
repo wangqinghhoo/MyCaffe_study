@@ -1,5 +1,9 @@
 # 修改caffemodel文件方法
 #### 首先是必须要做的，读取prototxt和caffemodel文件到caffe中，读取之后才可以对其进行操作(我按照jupter写的)
+###下面这个例子是在caffemodel中增加层，并且为新层添加参数（这里我的新层直接复制的老层的参数，用于知识蒸馏的预训练模型）
+
+### 为caffemodel添加新层并赋值参数
+#### 0.复制prototxt文件，在新文件中直接增加新层（这里命名为）
 #### 1.导入caffe环境（必须）
 ```python
 import numpy as np
@@ -43,3 +47,4 @@ for key0 in keys0:   # 输出所有层名，参数
     finally:
         print '\n'
 ```
+#### 4.参数复制
